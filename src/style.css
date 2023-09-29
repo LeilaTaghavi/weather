@@ -1,0 +1,63 @@
+body {
+  text-align: center;
+}
+#forecast {
+  border-radius: 60pt;
+  margin-top: 20pt;
+  background-color: rgb(205, 243, 255);
+  border: none;
+}
+.card-title {
+  margin-left: 10pt;
+}
+
+#degree {
+  font-size: medium;
+}
+#degree a {
+  text-decoration: none;
+}
+
+#currentcity {
+  color: blue;
+}
+
+#days {
+  color: rgb(20, 195, 20);
+  font-size: small;
+  background-color: rgb(205, 243, 255);
+}
+
+#temps {
+  font-size: smaller;
+  background-color: rgb(205, 243, 255);
+}
+#searchcityinput {
+  width: 75%;
+  margin-top: 20px;
+  margin-left: 5px;
+  display: inline;
+}
+#searchicon {
+  margin-left: -40px;
+  border-radius: 50%;
+  background-color: rgb(134, 134, 250);
+}
+#searchcitybuttom {
+  border-radius: 30px;
+  color: rgb(0, 0, 255);
+  background-color: rgb(134, 134, 250);
+  border: 0px;
+  margin-left: 5px;
+}
+#currentcitybutton {
+  display: inline;
+  border-radius: 30px;
+  color: rgb(0, 0, 255);
+  background-color: rgb(134, 134, 250);
+  border: 0px;
+  margin-left: 5px;
+}
+#citySearch {
+  display: inline;
+}

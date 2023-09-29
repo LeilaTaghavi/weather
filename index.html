@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container" id="mainframe">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="card">
+            <div class="card-header">
+              <div class="container">
+                <div class="row">
+                  <div class="col-4" id="currentcity">Tehran</div>
+                  <div class="col-4">Mashhad</div>
+                  <div class="col-4">Tabriz</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="container" id="currentdeg">
+                <div class="row">
+                  <div class="col-6">
+                    <h1>
+                      <span id="currentcitydeg">33</span>
+                      <sup id="degree">
+                        <a href="#" id="celsius">°C</a> |
+                        <a href="#" id="fahrenheit">°F</a>
+                      </sup>
+                    </h1>
+                    <h5 class="dateTime">date - time</h5>
+                    <h4>☀<span id="weatherDescription"> sunny</span></h4>
+                  </div>
+                  <div class="col-6">
+                    <p>
+                      Feels like: <span id="feelsLike">0</span>°C
+                      <br />
+                      💧 Humidity: <span id="humidity">14</span>
+                      <br />
+                      🌫 Wind: <span id="wind">11</span> km/h
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card" id="forecast" style="max-width: 100%">
+                <div class="card-body">
+                  <h6 class="card-title">5 day forecast:</h6>
+                  <table class="table table-borderless" id="forecasttable">
+                    <thead>
+                      <tr>
+                        <td id="days">Tuesday</td>
+                        <td id="days">Wednesday</td>
+                        <td id="days">Thursday</td>
+                        <td id="days">Friday</td>
+                        <td id="days">Saturday</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="temps">🌧 33 °C</td>
+                        <td id="temps">🌤 35 °C</td>
+                        <td id="temps">⛈33 °C</td>
+                        <td id="temps">☀ 35 °C</td>
+                        <td id="temps">🌧33 °C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <form id="citySearch">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="searchcityinput"
+                  placeholder="Enter a city"
+                />
+
+                <button type="submit" id="searchicon">
+                  <i
+                    class="fa-solid fa-magnifying-glass fa-flip-horizontal"
+                  ></i>
+                </button>
+              </form>
+              <button id="currentcitybutton">current</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f39f5645ca.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
