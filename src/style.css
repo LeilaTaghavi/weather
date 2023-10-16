@@ -15,9 +15,15 @@ body {
   font-size: Medium;
 }
 
+#currentcitydeg {
+  font-size: 58px;
+}
+#weatherDescription {
+  font-size: small;
+}
 #units {
   font-size: small;
-  top: -15px;
+  top: -35px;
 }
 #units a {
   text-decoration: none;

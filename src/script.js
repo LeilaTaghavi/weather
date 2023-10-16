@@ -12,7 +12,6 @@ let days = [
 function showTime(timestamp) {
   let date = new Date(timestamp);
   let day = days[date.getDay()];
-  console.log(day);
   let min = date.getMinutes();
   if (min < 10) {
     min = `0${min}`;
@@ -42,14 +41,11 @@ function temp(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemp);
 }
+
 function showTemp(response) {
   let currentDegree = response.data.main.temp;
   let degree = document.querySelector("#currentcitydeg");
   degree.innerHTML = Math.round(currentDegree);
-  console.log(response.data);
-
-  let weatherDescription = document.querySelector("#weatherDescription");
-  weatherDescription.innerHTML = response.data.weather[0].description;
 
   let feelsLike = document.querySelector("#feelsLike");
   feelsLike.innerHTML = Math.round(response.data.main.feels_like);
@@ -59,6 +55,13 @@ function showTemp(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = response.data.wind.speed;
+
+  let icon = document.querySelector("#weatherIcon");
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", `response.data.weather[0].description`);
 
   showTime(response.data.dt * 1000);
 }
