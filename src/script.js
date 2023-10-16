@@ -75,7 +75,7 @@ function toCelsius(event) {
   event.preventDefault();
   if (celsiusDegree == false) {
     let degree = document.querySelector("#currentcitydeg");
-    degree.innerHTML = 33;
+    degree.innerHTML = Math.round(((degree.innerHTML - 32) * 5) / 9);
     celsiusDegree = true;
   }
 }
@@ -83,7 +83,7 @@ function tofahrenheit(event) {
   event.preventDefault();
   if (celsiusDegree) {
     let degree = document.querySelector("#currentcitydeg");
-    degree.innerHTML = 65;
+    degree.innerHTML = Math.round((degree.innerHTML * 9) / 5 + 32);
     celsiusDegree = false;
   }
 }
