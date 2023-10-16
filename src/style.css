@@ -11,10 +11,15 @@ body {
   margin-left: 10pt;
 }
 
-#degree {
-  font-size: medium;
+#dateTime {
+  font-size: Medium;
 }
-#degree a {
+
+#units {
+  font-size: small;
+  top: -15px;
+}
+#units a {
   text-decoration: none;
 }
 

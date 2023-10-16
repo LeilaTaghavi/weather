@@ -9,13 +9,15 @@ let days = [
   "Saturday",
 ];
 
-function showTime() {
-  let day = days[now.getDay()];
-  let min = now.getMinutes();
+function showTime(timestamp) {
+  let date = new Date(timestamp);
+  let day = days[date.getDay()];
+  console.log(day);
+  let min = date.getMinutes();
   if (min < 10) {
     min = `0${min}`;
   }
-  let hour = now.getHours();
+  let hour = date.getHours();
   if (hour < 10) {
     hour = `0${hour}`;
   }
@@ -57,6 +59,8 @@ function showTemp(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = response.data.wind.speed;
+
+  showTime(response.data.dt * 1000);
 }
 
 let celsiusDegree = true;
@@ -96,5 +100,4 @@ function showTempbyPosition(position) {
   currentCity.innerHTML = "Local weather";
 }
 
-showTime();
 temp("Tehran");
