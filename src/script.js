@@ -64,6 +64,55 @@ function showTemp(response) {
   icon.setAttribute("alt", `response.data.weather[0].description`);
 
   showTime(response.data.dt * 1000);
+  console.log(response.data);
+  Forcast(response.data.coord);
+}
+
+function Forcast(coordinates) {
+  let apiKey = "33a04f162337od33e065b0c056atb7f0";
+
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForcast);
+}
+
+function showForcast(response) {
+  let forcastDaysElement = document.querySelector("#forcastDays");
+  let forcastTempsElement = document.querySelector("#temps");
+  console.log(forcastDaysElement);
+  let forcastDays = "";
+  let forcastTemps = "";
+  let forcast = response.data.daily;
+  console.log(forcast);
+
+  forcast.forEach(function (forcastDay, index) {
+    if (index < 5) {
+      console.log(forcastDay);
+      forcastDays += `<td id="days">${formatday(forcastDay.time)}</td>`;
+    }
+  });
+  forcastDaysElement.innerHTML = forcastDays;
+
+  forcast.forEach(function (forcastDay, index) {
+    if (index < 5) {
+      console.log(forcastDay);
+      forcastTemps += `<td id="temps">
+      <img 
+        id="forcastWeatherIcon"  
+        src="${forcastDay.condition.icon_url}"
+        alt= ${forcastDay.condition.description}
+        width="45px"
+      />
+      ${Math.round(forcastDay.temperature.day)} °C </td>`;
+    }
+  });
+  forcastTempsElement.innerHTML = forcastTemps;
+}
+
+function formatday(timestamp) {
+  console.log(timestamp);
+  let date = new Date(timestamp);
+  console.log(date);
+  return days[date.getDay()];
 }
 
 let celsiusDegree = true;
@@ -79,6 +128,7 @@ function toCelsius(event) {
     celsiusDegree = true;
   }
 }
+
 function tofahrenheit(event) {
   event.preventDefault();
   if (celsiusDegree) {
@@ -94,7 +144,7 @@ function currentLocationTemp() {
   navigator.geolocation.getCurrentPosition(showTempbyPosition);
 }
 function showTempbyPosition(position) {
-  let apiKey = "73a00877081bd43422bdee0f3022beb5";
+  let apiKey = "6f578b96aa9505bcce148ac22cb85794";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;

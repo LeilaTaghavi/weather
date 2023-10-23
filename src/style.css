@@ -11,19 +11,27 @@ body {
   margin-left: 10pt;
 }
 
-#dateTime {
-  font-size: Medium;
+.dateTime {
+  margin-left: 20px;
+  font-size: larger;
+}
+
+.currentDaySpecifications {
+  margin-top: 15pt;
+  font-size: small;
+  margin-left: 25pt;
 }
 
 #currentcitydeg {
-  font-size: 58px;
+  font-size: 50px;
+  margin-left: -10pt;
 }
 #weatherDescription {
   font-size: small;
 }
 #units {
   font-size: small;
-  top: -35px;
+  top: -25px;
 }
 #units a {
   text-decoration: none;
@@ -33,12 +41,22 @@ body {
   color: blue;
 }
 
+#day1,
+#day2,
+#day3,
+#day4,
+#day5,
 #days {
   color: rgb(20, 195, 20);
   font-size: small;
   background-color: rgb(205, 243, 255);
 }
 
+#temp1,
+#temp2,
+#temp3,
+#temp4,
+#temp5,
 #temps {
   font-size: smaller;
   background-color: rgb(205, 243, 255);
@@ -71,4 +89,7 @@ body {
 }
 #citySearch {
   display: inline;
+}
+#weatherIcon {
+  vertical-align: top;
 }

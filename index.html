@@ -22,9 +22,7 @@
             <div class="card-header">
               <div class="container">
                 <div class="row">
-                  <div class="col-4" id="currentcity">Tehran</div>
-                  <div class="col-4">Mashhad</div>
-                  <div class="col-4">Tabriz</div>
+                  <div class="col-12" id="currentcity">Tehran</div>
                 </div>
               </div>
             </div>
@@ -33,6 +31,12 @@
                 <div class="row">
                   <div class="col-6">
                     <h1>
+                      <img
+                        id="weatherIcon"
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        alt="sunny"
+                        width="70px"
+                      />
                       <span id="currentcitydeg">33</span>
                       <sup id="units">
                         <a href="#" id="celsius">°C</a> |
@@ -40,15 +44,9 @@
                       </sup>
                     </h1>
                     <h5 class="dateTime">date - time</h5>
-
-                    <img
-                      id="weatherIcon"
-                      src="https://openweathermap.org/img/wn/10d@2x.png"
-                      alt="sunny"
-                    />
                   </div>
                   <div class="col-6">
-                    <p>
+                    <p class="currentDaySpecifications">
                       Feels like: <span id="feelsLike">0</span>°C
                       <br />
                       💧 Humidity: <span id="humidity">14</span>
@@ -63,22 +61,10 @@
                   <h6 class="card-title">5 day forecast:</h6>
                   <table class="table table-borderless" id="forecasttable">
                     <thead>
-                      <tr>
-                        <td id="days">Tuesday</td>
-                        <td id="days">Wednesday</td>
-                        <td id="days">Thursday</td>
-                        <td id="days">Friday</td>
-                        <td id="days">Saturday</td>
-                      </tr>
+                      <tr id="forcastDays"></tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td id="temps">🌧 33 °C</td>
-                        <td id="temps">🌤 35 °C</td>
-                        <td id="temps">⛈33 °C</td>
-                        <td id="temps">☀ 35 °C</td>
-                        <td id="temps">🌧33 °C</td>
-                      </tr>
+                      <tr id="temps"></tr>
                     </tbody>
                   </table>
                 </div>
